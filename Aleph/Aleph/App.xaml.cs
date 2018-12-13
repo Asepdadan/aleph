@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Aleph.home;
+using Aleph.login;
+using Aleph.refrence;
+using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,9 +15,12 @@ namespace Aleph
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            MainPage = new NavigationPage(new SplashScreen());
+            //MainPage = new NavigationPage(new HomeIndex());
         }
 
+        bool status;
         protected override void OnStart()
         {
             // Handle when your app starts

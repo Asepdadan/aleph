@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aleph.home.HomeIndex"
+              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <!--<RowDefinition Height="0,5"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>-->
+        </Grid.RowDefinitions>
+
+        <ContentView Grid.Row="0">
+            <controls:CarouselViewControl
+                x:Name="MainCarouselView"
+                ShowArrows="False" 
+                ShowIndicators="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                >
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding Image}" Aspect="Fill"></Image>
+                            <Grid Margin="10,15,10,0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="350"></RowDefinition>
+                                    <RowDefinition Height="20"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Text="test" TextColor="white" FontSize="Medium" Grid.Row="0"  HorizontalTextAlignment="Start"
+                                    ></Label>
+                                <Label Text="Design Text Agak Besar" TextColor="white" FontSize="Medium" Grid.Row="1"  HorizontalTextAlignment="Start"
+                                    ></Label>
+                                <Label Text="{Binding Description}"  TextColor="white" FontSize="Small" Grid.Row="2" HorizontalTextAlignment="Start"
+                                    ></Label>
+                                <StackLayout Grid.Row="3">
+                                    <!--<Button Text="Profil" HeightRequest="30" BackgroundColor="#ef073d" TextColor="White">
+                                        
+                                    </Button>-->
+                                    <StackLayout VerticalOptions="End">
+                                        <StackLayout x:Name="ButtonStackLayout" Orientation="Horizontal" HeightRequest="20" Spacing="10" Padding="10,10,10,10" BackgroundColor="#E3E3E3">
+                                            <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
+                                            <Label x:Name="ButtonLabel" FontSize="15" BackgroundColor="#E3E3E3" Text="Retry" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" />
+                                            <Image x:Name="ButtonImage" BackgroundColor="#E3E3E3" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" />
+                                            <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                
+                            </Grid>
+                            <!--<ContentView Grid.Row="0" Padding="0,0,0,0">
+                                <Image Source="{Binding Image}" Aspect="Fill"></Image>
+                                
+                            </ContentView>
+
+                            <ContentView Grid.Row="1" Padding="20,10,20,50">
+                                <Label Text="{Binding Description}"  HorizontalTextAlignment="Center"
+                                    ></Label>
+                            </ContentView>-->
+
+                        </Grid>
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+        </ContentView>
+    </Grid>
+</ContentPage>
